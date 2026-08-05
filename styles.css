@@ -440,47 +440,94 @@ button, input, textarea { font: inherit; }
   .contact-links { gap: 14px; }
 }
 /* =========================================================
-   RESEARCH PROGRAM HEADING
+   COMBINED RESEARCH + SELECTED CONTRIBUTIONS
+   Add this block at the end of styles.css
    ========================================================= */
 
-.work-heading {
+.research-highlights {
+  margin-top: 104px;
+  padding-top: 88px;
+  border-top: 1px solid var(--line);
+}
+
+.research-highlights .work-heading {
   max-width: 760px;
   margin: 0 0 3.5rem 0;
 }
 
-.work-heading .section-label {
-  margin: 0 0 0.9rem;
+.research-highlights .work-heading .section-label {
+  margin: 0 0 .9rem;
 }
 
-.work-heading h2 {
+.research-highlights .work-heading h2 {
   margin: 0;
   max-width: 720px;
   font-family: "Source Serif 4", Georgia, serif;
   font-size: clamp(2.35rem, 3.7vw, 3.8rem);
   font-weight: 600;
   line-height: 1.04;
-  letter-spacing: -0.032em;
+  letter-spacing: -.032em;
 }
 
-.work-intro {
-  max-width: 660px;
+.research-highlights .work-intro {
+  max-width: 650px;
   margin: 1.25rem 0 0;
   color: var(--muted);
   font-size: 1rem;
   line-height: 1.7;
 }
 
+.featured-reverse .project-visual {
+  order: 2;
+}
+
+.featured-reverse .featured-content {
+  order: 1;
+}
+
+.visual-ensemble {
+  overflow: hidden;
+  background: #eef3f2;
+}
+
+.visual-ensemble img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 340px;
+  object-fit: contain;
+  object-position: center;
+  padding: clamp(1rem, 2vw, 2rem);
+}
+
+@media (max-width: 980px) {
+  .featured-reverse .project-visual,
+  .featured-reverse .featured-content {
+    order: initial;
+  }
+}
+
 @media (max-width: 760px) {
-  .work-heading {
+  .research-highlights {
+    margin-top: 72px;
+    padding-top: 64px;
+  }
+
+  .research-highlights .work-heading {
     margin-bottom: 2.5rem;
   }
 
-  .work-heading h2 {
+  .research-highlights .work-heading h2 {
     font-size: clamp(2.15rem, 9vw, 3rem);
     line-height: 1.06;
   }
 
-  .work-intro {
-    font-size: 0.95rem;
+  .research-highlights .work-intro {
+    font-size: .95rem;
+  }
+
+  .visual-ensemble img {
+    min-height: 230px;
+    padding: .75rem;
   }
 }
