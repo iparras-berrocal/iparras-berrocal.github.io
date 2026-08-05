@@ -439,3 +439,9 @@ button, input, textarea { font: inherit; }
   .featured-content { padding: 28px 24px; }
   .contact-links { gap: 14px; }
 }
+.work-heading h2 {
+  max-width: 760px;
+  font-size: clamp(2.2rem, 3vw, 3.3rem);
+  line-height: 1.06;
+  letter-spacing: -0.028em;
+}
