@@ -439,95 +439,117 @@ button, input, textarea { font: inherit; }
   .featured-content { padding: 28px 24px; }
   .contact-links { gap: 14px; }
 }
+/* Selected work heading: align label and title together */
+.work-heading {
+  display: block;
+  max-width: 900px;
+  margin-bottom: 3rem;
+}
+
+.work-heading .section-label {
+  margin-bottom: 1rem;
+}
+
+.work-heading h2 {
+  max-width: 760px;
+  margin: 0;
+  font-size: clamp(2.2rem, 3vw, 3.3rem);
+  line-height: 1.06;
+  letter-spacing: -0.028em;
+}
 /* =========================================================
-   COMBINED RESEARCH + SELECTED CONTRIBUTIONS
-   Add this block at the end of styles.css
+   CID EXPLORER HIGHLIGHT
    ========================================================= */
 
-.research-highlights {
-  margin-top: 104px;
-  padding-top: 88px;
-  border-top: 1px solid var(--line);
+.highlight-section {
+  background: var(--bg);
 }
 
-.research-highlights .work-heading {
+.highlight-heading {
   max-width: 760px;
-  margin: 0 0 3.5rem 0;
+  margin-bottom: 3.5rem;
 }
 
-.research-highlights .work-heading .section-label {
-  margin: 0 0 .9rem;
-}
-
-.research-highlights .work-heading h2 {
+.highlight-heading h2 {
   margin: 0;
-  max-width: 720px;
   font-family: "Source Serif 4", Georgia, serif;
-  font-size: clamp(2.35rem, 3.7vw, 3.8rem);
+  font-size: clamp(2.7rem, 5vw, 4.6rem);
   font-weight: 600;
-  line-height: 1.04;
-  letter-spacing: -.032em;
+  line-height: 1.03;
+  letter-spacing: -.035em;
 }
 
-.research-highlights .work-intro {
+.highlight-heading > p:last-child {
   max-width: 650px;
   margin: 1.25rem 0 0;
   color: var(--muted);
   font-size: 1rem;
-  line-height: 1.7;
 }
 
-.featured-reverse .project-visual {
-  order: 2;
-}
-
-.featured-reverse .featured-content {
-  order: 1;
-}
-
-.visual-ensemble {
+.highlight-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(330px, .65fr);
   overflow: hidden;
-  background: #eef3f2;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
 }
 
-.visual-ensemble img {
-  display: block;
+.highlight-visual {
+  min-height: 520px;
+  background: #133947;
+  overflow: hidden;
+}
+
+.highlight-visual img {
   width: 100%;
   height: 100%;
-  min-height: 340px;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
-  padding: clamp(1rem, 2vw, 2rem);
+}
+
+.highlight-content {
+  padding: clamp(36px, 5vw, 58px);
+  align-self: center;
+}
+
+.highlight-content h3 {
+  margin: 0 0 16px;
+  font-size: clamp(1.65rem, 2.4vw, 2.2rem);
+  line-height: 1.2;
+}
+
+.highlight-content > p:not(.project-kicker) {
+  margin: 0 0 30px;
+  color: var(--muted);
 }
 
 @media (max-width: 980px) {
-  .featured-reverse .project-visual,
-  .featured-reverse .featured-content {
-    order: initial;
+  .highlight-card {
+    grid-template-columns: 1fr;
+  }
+
+  .highlight-visual {
+    min-height: 420px;
   }
 }
 
 @media (max-width: 760px) {
-  .research-highlights {
-    margin-top: 72px;
-    padding-top: 64px;
-  }
-
-  .research-highlights .work-heading {
+  .highlight-heading {
     margin-bottom: 2.5rem;
   }
 
-  .research-highlights .work-heading h2 {
-    font-size: clamp(2.15rem, 9vw, 3rem);
-    line-height: 1.06;
+  .highlight-visual {
+    min-height: 300px;
   }
 
-  .research-highlights .work-intro {
-    font-size: .95rem;
+  .highlight-content {
+    padding: 34px 28px 40px;
   }
+}
 
-  .visual-ensemble img {
+@media (max-width: 480px) {
+  .highlight-visual {
     min-height: 230px;
-    padding: .75rem;
   }
 }
